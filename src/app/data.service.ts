@@ -7,7 +7,18 @@ import { HttpClient} from "@angular/common/http";
 export class DataService {
 
   constructor(private http:HttpClient) { }
- getUsers(){
+ /*To list all users*/
+  getUsers(){
    return this.http.get('https://jsonplaceholder.typicode.com/users');
  }
+
+ /*To get user specific details*/
+ getUser(userId){
+   return this.http.get("https://jsonplaceholder.typicode.com/users/"+userId);
+ }
+
+ getPosts(){
+   return this.http.get("https://jsonplaceholder.typicode.com/posts");
+ }
+
 }
